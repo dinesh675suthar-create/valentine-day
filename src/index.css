@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Poppins:wght@400;600&display=swap');
+
+:root {
+  --primary: #ff4d6d;
+  --secondary: #ff85a1;
+  --accent: #ffb3c1;
+  --bg: #fff0f3;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at center, var(--bg) 0%, #ffe5ec 100%);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  color: #590d22;
+}
+
+.app-wrapper {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  text-align: center;
+  padding: 3rem;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(15px);
+  border-radius: 40px;
+  box-shadow: 0 25px 60px rgba(255, 77, 109, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  max-width: 90%;
+  width: 550px;
+  position: relative;
+  z-index: 10;
+  animation: fadeIn 0.8s ease-out;
+}
+
+h1 {
+  font-family: 'Caveat', cursive;
+  font-size: 3.8rem;
+  margin-bottom: 2rem;
+  color: var(--primary);
+  line-height: 1.1;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.gif-container {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: drop-shadow(0 15px 25px rgba(255, 77, 109, 0.15));
+}
+
+.gif-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 30px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  margin-top: 1rem;
+  min-height: 80px;
+}
+
+button {
+  padding: 16px 45px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.yes-btn {
+  background: linear-gradient(135deg, var(--primary), #ff0040);
+  color: white;
+  box-shadow: 0 10px 30px rgba(255, 77, 109, 0.4);
+}
+
+.yes-btn:hover {
+  transform: scale(1.2) translateY(-5px);
+  box-shadow: 0 15px 40px rgba(255, 77, 109, 0.5);
+}
+
+.no-btn {
+  background-color: white;
+  color: var(--primary);
+  border: 3.5px solid var(--primary);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  font-weight: 700;
+}
+
+.no-btn.moving {
+  transition: all 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.sub-text {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  color: var(--secondary);
+  opacity: 0.8;
+}
+
+/* Background Decorations */
+.bg-decoration {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.floating-item {
+  position: absolute;
+  color: var(--accent);
+  opacity: 0.5;
+  animation: floatUp 10s infinite linear;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(110vh) rotate(0deg);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0.5;
+  }
+
+  90% {
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: translateY(-10vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px) scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Confetti */
+.confetti-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.confetti-piece {
+  position: absolute;
+  width: 10px;
+  height: 20px;
+  background-color: var(--primary);
+  top: -20px;
+  opacity: 0.7;
+  animation: confettiFall linear forwards;
+}
+
+@keyframes confettiFall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+  }
+}
+
+.success-message {
+  animation: bounceScale 1.5s infinite;
+}
+
+@keyframes bounceScale {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+}
