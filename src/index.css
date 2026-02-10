@@ -219,3 +219,37 @@ button {
     transform: scale(1.1);
   }
 }
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 600px) {
+  .container {
+    padding: 2rem 1.5rem;
+    width: 95%;
+    border-radius: 30px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .gif-container {
+    width: 220px;
+    height: 220px;
+    margin-bottom: 1.5rem;
+  }
+
+  .buttons {
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  button {
+    padding: 12px 35px;
+    font-size: 1.2rem;
+  }
+
+  .sub-text {
+    font-size: 1rem;
+  }
+}

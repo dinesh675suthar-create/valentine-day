@@ -165,6 +165,10 @@ const App = () => {
                 id="noBtn"
                 className={`no-btn ${isMoving ? 'moving' : ''}`}
                 onMouseEnter={moveButton}
+                onTouchStart={(e) => {
+                  e.preventDefault();
+                  moveButton();
+                }}
                 style={{
                   position: isMoving ? 'fixed' : 'relative',
                   top: noButtonPos.top,
